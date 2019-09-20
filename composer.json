@@ -1,0 +1,29 @@
+{
+    "name": "jacksonit/nganluong",
+    "description": "Tích hợp thanh toán qua Ngân Lượng cho website Laravel",
+    "license": "MIT",
+    "keywords": ["laravel", "nganluong", "jacksonit"],
+    "authors": [
+        {
+            "name": "Cao Son",
+            "email": "jacksonit.org@gmail.com",
+            "homepage": "http://jacksonit.org"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "illuminate/support": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jacksonit\\NganLuong\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jacksonit\\NganLuong\\NganLuongServiceProvider"
+            ]
+        }
+    }
+}
