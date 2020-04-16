@@ -1,4 +1,4 @@
-# Laravel 5 NganLuong
+# Laravel 6 NganLuong
 Tích hợp thanh toán qua Ngân Lượng cho website Laravel.
 
 -----
