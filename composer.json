@@ -1,9 +1,13 @@
 {
-    "name": "jacksonit/nganluong",
+    "name": "quangtam/nganluong",
     "description": "Tích hợp thanh toán qua Ngân Lượng cho website Laravel",
     "license": "MIT",
     "keywords": ["laravel", "nganluong", "jacksonit"],
     "authors": [
+        {
+            "name": "Quang Tam Vu",
+            "email": "quangtam.fo@gmail.com"
+        },
         {
             "name": "Cao Son",
             "email": "jacksonit.org@gmail.com",
@@ -11,8 +15,8 @@
         }
     ],
     "require": {
-        "php": ">=7.0",
-        "illuminate/support": "^5.1"
+        "php": ">=7.2.0",
+        "illuminate/support": "^6.0.0"
     },
     "autoload": {
         "psr-4": {
