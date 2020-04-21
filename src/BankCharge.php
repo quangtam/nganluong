@@ -64,7 +64,7 @@ class BankCharge extends NL_CheckOutV3
      * @param array $input
      * @return Response
      */
-    public function IB() {
+    public function IB($input) {
         $validator = $this->validator($input);
         if (!$validator['success']) {
             return $validator;
