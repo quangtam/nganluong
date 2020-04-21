@@ -57,6 +57,30 @@ class BankCharge extends NL_CheckOutV3
             $params['items']
         );
     }
+    
+     /**
+     * Checkout with method Internet Banking. <IB_ONLINE>
+     *
+     * @param array $input
+     * @return Response
+     */
+    public function IB() {
+        $validator = $this->validator($input);
+        if (!$validator['success']) {
+            return $validator;
+        }
+        $params = $this->formatInput($input);
+
+        return $this->IBCheckout(
+            $params['order_code'], $params['total_amount'],
+            $params['bank_code'], $params['payment_type'],
+            $params['order_description'],
+            $params['tax_amount'], $params['fee_shipping'], $params['discount_amount'],
+            $params['return_url'], $params['cancel_url'],
+            $params['fullname'], $params['email'], $params['mobile'], $params['address'],
+            $params['items']
+        );
+    }
 
     /**
      * Checkout with method Visa, Mastercard <VISA>
