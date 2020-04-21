@@ -46,10 +46,9 @@ class BankCharge extends NL_CheckOutV3
             return $validator;
         }
         $params = $this->formatInput($input);
-        $order_code = uniqid();
 
         return $this->BankCheckout(
-            $order_code, $params['total_amount'],
+            $params['order_code'], $params['total_amount'],
             $params['bank_code'], $params['payment_type'],
             $params['order_description'],
             $params['tax_amount'], $params['fee_shipping'], $params['discount_amount'],
@@ -72,10 +71,9 @@ class BankCharge extends NL_CheckOutV3
             return $validator;
         }
         $params = $this->formatInput($input);
-        $order_code = uniqid();
 
         return $this->VisaCheckout(
-            $order_code, $params['total_amount'],
+            $params['order_code'], $params['total_amount'],
             $params['payment_type'],
             $params['order_description'],
             $params['tax_amount'], $params['fee_shipping'], $params['discount_amount'],
@@ -164,6 +162,8 @@ class BankCharge extends NL_CheckOutV3
             // URL for Redirect
             'return_url' => isset($input['return_url']) ? $input['return_url'] : $this->return_url,
             'cancel_url' => isset($input['cancel_url']) ? $input['cancel_url'] : $this->cancel_url,
+            // Order Code
+            'order_code' => isset($input['order_code']) ? $input['order_code'] : uniqid(),
             // Fees
             'total_amount' => isset($input['total_amount']) ? $input['total_amount'] : 0,
             'tax_amount' => config('nganluong.tax_amount', 0),
